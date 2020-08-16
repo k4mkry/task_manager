@@ -1,0 +1,39 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Id</th>
+                <th>Od</th>
+                <th>Dla</th>
+                <th>Opis</th>
+                <th>Notatki</th>
+                <th>Priorytet</th>
+                <th>Utworzono</th>
+                <th>Termin</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+
+            <tr>
+                <td></td>
+                <td>{{ task.pk }}</td>
+                <td>{{ task.ordered_by }}</td>
+                <td>{{ task.assigned_to }}</td>
+                <td>{{ task.description }}</td>
+                <td>{{ task.notes }}</td>
+                <td>{{ task.priority }}</td>
+                <td>{{ task.created_date }}</td>
+                <td>{{ task.deadline_date }}</td>
+                <td>{{ task.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
